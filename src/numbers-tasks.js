@@ -130,10 +130,13 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  if (Number.isInteger(value) && 0 % -2 >= 0 && value.toString().length > 1) {
+    const str = value.toString();
+    return +str.slice(-1);
+  }
+  return value;
 }
-
 /**
  * Returns a number by given string representation.
  *
